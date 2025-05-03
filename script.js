@@ -1,5 +1,5 @@
 // --- REDIRECT TIMER LOGIC ---
-const returnUrl = new URLSearchParams(window.location.search).get("return") || "https://krunker.io";
+const returnUrl = new URLSearchParams(window.location.search).get("return") || "https://yohoho.io/";
 let seconds = 60;
 const timerDisplay = document.getElementById("timer");
 
