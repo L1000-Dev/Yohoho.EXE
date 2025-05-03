@@ -1,0 +1,347 @@
+/* Background Galaxy */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://images.unsplash.com/photo-1477201544970-5d08f4d832c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+/* Animated Galaxy Background */
+.stars, .stars2, .stars3 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent url('https://raw.githubusercontent.com/klaudiosinani/starry-night/master/starfield.png') repeat top center;
+  z-index: 0;
+  animation: moveStars 100s linear infinite;
+}
+
+.stars2 {
+  background-size: contain;
+  opacity: 0.5;
+  animation: moveStars 200s linear infinite;
+}
+
+.stars3 {
+  background-size: cover;
+  opacity: 0.2;
+  animation: moveStars 300s linear infinite;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
+}
+
+/* Title Header */
+header {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 0 30px #00f0ff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #00f0ff;
+  text-shadow: 0 0 10px #00f0ff;
+}
+
+header p {
+  font-size: 1rem;
+  margin-top: 5px;
+  color: #ccc;
+}
+
+/* Ads */
+.ad {
+  position: fixed;
+  top: 100px;
+  width: 160px;
+}
+
+.left-ad {
+  left: 0;
+}
+
+.right-ad {
+  right: 0;
+}
+
+.ad-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 40px 20px;
+}
+
+.ad-right-sidebar {
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  width: 160px;
+  height: 600px;
+  z-index: 9999;
+}
+
+/* Main Content Centered */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+/* Content Box */
+.content-box {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px #00f0ff;
+  text-align: center;
+  max-width: 600px;
+}
+
+.content-box h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Button */
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: #00f0ff;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #00c0dd;
+  box-shadow: 0 0 10px #00f0ff;
+}
+
+/* Footer + Discord Button */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  padding: 20px 0;
+  box-shadow: 0 -2px 20px #00f0ff;
+}
+
+.discord-box {
+  margin-top: 10px;
+}
+
+.discord-link {
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  background-color: #7289da;
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 20px #7289da;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+footer .discord-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.buy-key-link {
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  background-color: #ff4c4c;
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 20px #ff4c4c;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: pulse 2s infinite;
+}
+
+.buy-key-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #ff4c4c;
+}
+
+
+.discord-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #7289da;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body > *:not(.stars):not(.stars2):not(.stars3) {
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Discord Pulse Animation */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 10px #7289da, 0 0 20px #7289da; }
+  50% { transform: scale(1.05); box-shadow: 0 0 20px #7289da, 0 0 30px #7289da; }
+  100% { transform: scale(1); box-shadow: 0 0 10px #7289da, 0 0 20px #7289da; }
+}
+
+.discord-link {
+  animation: pulse 2s infinite;
+}
+
+#fallingStars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.star, .shooting-star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.star {
+  width: 2px;
+  height: 2px;
+}
+
+.shooting-star {
+  width: 2px;
+  height: 2px;
+  box-shadow: 0 0 6px 3px white;
+  animation: shoot 2s linear forwards;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-200px, 200px);
+    opacity: 0;
+  }
+}
+
+#fallingStars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px 3px white;
+  animation: shoot 7s linear forwards;
+  opacity: 0.9;
+  transform: rotate(-45deg); /* Match the angle of motion */
+}
+
+.shooting-star::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(to left, white, transparent);
+  opacity: 0.5;
+  transform: rotate(0deg);
+}
+
+@keyframes shoot {
+  0% {
+    transform: translate(0, 0) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-800px, 800px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+.static-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 2px white;
+  opacity: 0.8;
+}
+
+@keyframes starFlicker {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+.static-star {
+  animation: starFlicker 3s infinite ease-in-out;
+}
+
+.back-home-link {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: #1e2f4f;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #1e2f4f;
+  transition: all 0.3s ease;
+}
+
+.back-home-link:hover {
+  background-color: #324b7b;
+  box-shadow: 0 0 20px #1e2f4f;
+}
+
+.paypal-button {
+  background-color: #0070ba;
+  color: white;
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #0070ba;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease;
+}
+
+.paypal-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #0070ba;
+}
